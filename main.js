@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < 24; i++) {
       createHeart(i);
     }
+
+    for (let i = 0; i < 30; i++) {
+      createPetal(i);
+    }
   });
 
   closeLetter.addEventListener("click", () => {
@@ -41,4 +45,39 @@ function createHeart(index) {
   setTimeout(() => {
     heart.remove();
   }, 4500);
+}
+
+function createPetal(index) {
+  const petal = document.createElement("span");
+
+  petal.className = "falling-petal";
+  petal.style.left = `${Math.random() * 100}%`;
+  petal.style.width = `${8 + Math.random() * 8}px`;
+  petal.style.height = `${13 + Math.random() * 10}px`;
+
+  petal.style.setProperty(
+    "--duration",
+    `${5 + Math.random() * 4}s`
+  );
+
+  petal.style.setProperty(
+    "--delay",
+    `${Math.random() * 1.5}s`
+  );
+
+  petal.style.setProperty(
+    "--drift",
+    `${-160 + Math.random() * 320}px`
+  );
+
+  petal.style.background =
+    index % 2 === 0
+      ? "linear-gradient(135deg, #ffb6d5, #e86b9d)"
+      : "linear-gradient(135deg, #e1d5ff, #9a7ce8)";
+
+  document.body.appendChild(petal);
+
+  setTimeout(() => {
+    petal.remove();
+  }, 10000);
 }
