@@ -1508,3 +1508,19 @@ body.revealed .letter {
 .secret-message audio {
   width: min(100%, 280px);
 }
+.secret-message[hidden] {
+  display: none !important;
+}
+
+.secret-message {
+  margin-top: 18px;
+  color: #ffd1e2;
+  opacity: 0;
+  transform: translateY(12px) scale(.9);
+  transition: .5s ease;
+}
+
+.secret-message.show-secret {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
