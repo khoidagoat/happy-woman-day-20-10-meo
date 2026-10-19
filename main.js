@@ -7,10 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const openGift = document.getElementById("openGift");
   const closeLetter = document.getElementById("closeLetter");
   const letter = document.getElementById("letter");
-
+const message = document.getElementById("typewriter");
+let typingStarted = false;
   if (!openGift || !closeLetter || !letter) return;
 
-  openGift.addEventListener("click", () => {
+  openGift.addEventListener("click", () => { 
+    startTyping();
     document.body.classList.add("revealed");
     letter.setAttribute("aria-hidden", "false");
 
@@ -27,7 +29,26 @@ document.addEventListener("DOMContentLoaded", () => {
     stopPetalLoop();
   });
 });
+function startTyping() {
+  if (!message || typingStarted) return;
 
+  typingStarted = true;
+
+  const text = message.textContent.trim();
+  message.textContent = "";
+
+  let index = 0;
+
+  const typingTimer = setInterval(() => {
+    message.textContent += text[index];
+    index++;
+
+    if (index >= text.length) {
+      clearInterval(typingTimer);
+      message.classList.add("typing-done");
+    }
+  }, 45);
+}
 function createHeart(index) {
   const heart = document.createElement("span");
 
