@@ -1226,7 +1226,100 @@ body.revealed .letter {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+.digital-bouquet {
+  height: 145px;
+  margin: -20px auto -4px;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+}
 
+.digital-bouquet svg {
+  width: min(100%, 320px);
+  height: 150px;
+  overflow: visible;
+}
+
+.bouquet-stems {
+  fill: none;
+  stroke: url(#stemColor);
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: url(#flowerGlow);
+}
+
+.bouquet-leaves {
+  fill: url(#stemColor);
+  opacity: .9;
+  filter: url(#flowerGlow);
+}
+
+.pink-petal,
+.purple-petal {
+  stroke: rgba(255,255,255,.55);
+  stroke-width: 1.3;
+  filter: url(#flowerGlow);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.pink-petal {
+  fill: url(#pinkPetal);
+}
+
+.purple-petal {
+  fill: url(#purplePetal);
+}
+
+.flower-core {
+  fill: #ffe58b;
+  stroke: #fff4c4;
+  stroke-width: 2;
+  filter: url(#flowerGlow);
+  animation: core-glow 2s ease-in-out infinite alternate;
+}
+
+.flower-sway {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: flower-sway 3.5s ease-in-out infinite;
+}
+
+.side-flower {
+  animation-delay: .5s;
+}
+
+@keyframes flower-sway {
+  0%, 100% {
+    transform: rotate(-2deg) scale(.98);
+  }
+
+  50% {
+    transform: rotate(2deg) scale(1.03);
+  }
+}
+
+@keyframes core-glow {
+  from {
+    filter: url(#flowerGlow);
+    opacity: .75;
+  }
+
+  to {
+    filter: url(#flowerGlow);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .digital-bouquet {
+    height: 125px;
+  }
+
+  .digital-bouquet svg {
+    height: 130px;
+  }
+}
 .open-gift:hover {
   transform: translate(-50%, -50%) translateY(-4px) scale(1.04);
 }
