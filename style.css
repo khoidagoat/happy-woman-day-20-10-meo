@@ -1524,3 +1524,18 @@ body.revealed .letter {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+.bouquet-stems {
+  fill: none;
+  stroke: #46b98b;
+  stroke-width: 5;
+  stroke-linecap: round;
+  opacity: .95;
+}
+
+.bouquet-main-stem {
+  fill: none;
+  stroke: #55c995;
+  stroke-width: 5;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 4px rgba(100, 255, 190, .65));
+}
