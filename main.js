@@ -142,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     secretClicks++;
 
     if (secretClicks === 3) {
+      secretMessage.hidden = false;
       secretMessage.classList.add("show-secret");
 
       if (secretSong) {
