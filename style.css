@@ -1434,3 +1434,33 @@ body.revealed .letter {
 .signature {
   font-family: Georgia, "Times New Roman", serif;
 }
+/* Font tiếng Việt ổn định cho phần thiệp */
+.letter,
+.letter h2,
+.letter p,
+.letter-text {
+  font-family: Arial, "Segoe UI", sans-serif !important;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tiêu đề trong thiệp */
+.letter h2 {
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Nội dung lời chúc */
+.letter-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Chữ ký giữ kiểu mềm hơn */
+.signature {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-style: italic;
+}
