@@ -1409,7 +1409,7 @@ body.revealed .letter {
 /* Hạ bó hoa trong thiệp xuống */
 .digital-bouquet {
   position: relative;
-  top: 12px;
+  top: 22px;
   margin: 0 auto 16px;
   height: 150px;
   overflow: visible;
