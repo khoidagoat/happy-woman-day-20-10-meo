@@ -1467,7 +1467,7 @@ body.revealed .letter {
 /* Đưa cụm hoa nền xuống sát cạnh dưới màn hình */
 .flowers {
   position: fixed;
-  left: 50%;
+  left: calc(50% + 4vw);
   bottom: -18vh;
   width: 100vw;
   height: 100vh;
