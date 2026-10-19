@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const openGift = document.getElementById("openGift");
   const closeLetter = document.getElementById("closeLetter");
   const letter = document.getElementById("letter");
+  const message = document.getElementById("typewriter");
+let typingStarted = false;
 const message = document.getElementById("typewriter");
 let typingStarted = false;
   if (!openGift || !closeLetter || !letter) return;
