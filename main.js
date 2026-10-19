@@ -1,3 +1,4 @@
+let petalInterval = null;
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.body.classList.remove("not-loaded");
@@ -17,14 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
       createHeart(i);
     }
 
-    for (let i = 0; i < 30; i++) {
-      createPetal(i);
-    }
+    startPetalLoop();
   });
 
   closeLetter.addEventListener("click", () => {
     document.body.classList.remove("revealed");
     letter.setAttribute("aria-hidden", "true");
+    stopPetalLoop();
   });
 });
 
@@ -46,7 +46,26 @@ function createHeart(index) {
     heart.remove();
   }, 4500);
 }
+function startPetalLoop() {
+  if (petalInterval) return;
 
+  for (let i = 0; i < 12; i++) {
+    createPetal(i);
+  }
+
+  petalInterval = setInterval(() => {
+    createPetal(Math.random());
+  }, 300);
+}
+
+function stopPetalLoop() {
+  clearInterval(petalInterval);
+  petalInterval = null;
+
+  document
+    .querySelectorAll(".falling-petal")
+    .forEach((petal) => petal.remove());
+}
 function createPetal(index) {
   const petal = document.createElement("span");
 
