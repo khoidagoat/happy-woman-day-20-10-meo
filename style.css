@@ -1222,3 +1222,11 @@ body.revealed .letter {
     transition-duration: .01ms !important;
   }
 }
+.open-gift {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.open-gift:hover {
+  transform: translate(-50%, -50%) translateY(-4px) scale(1.04);
+}
