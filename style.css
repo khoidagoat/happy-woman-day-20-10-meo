@@ -1464,3 +1464,15 @@ body.revealed .letter {
   font-family: Georgia, "Times New Roman", serif !important;
   font-style: italic;
 }
+/* Đưa cụm hoa nền xuống sát cạnh dưới màn hình */
+.flowers {
+  position: fixed;
+  left: 50%;
+  bottom: -18vh;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(-50%) scale(.9);
+  transform-origin: bottom center;
+  z-index: 1;
+  pointer-events: none;
+}
