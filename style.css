@@ -1398,3 +1398,39 @@ body.revealed .letter {
     opacity: 0;
   }
 }
+/* Chỉ chỉnh nội dung bên trong thiệp */
+.letter,
+.letter h2,
+.letter p,
+.letter button {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Hạ bó hoa trong thiệp xuống */
+.digital-bouquet {
+  position: relative;
+  top: 12px;
+  margin: 0 auto 16px;
+  height: 150px;
+  overflow: visible;
+}
+
+.digital-bouquet svg {
+  overflow: visible;
+}
+
+/* Font đoạn lời chúc */
+.letter h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.3;
+}
+
+.letter-text {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.signature {
+  font-family: Georgia, "Times New Roman", serif;
+}
