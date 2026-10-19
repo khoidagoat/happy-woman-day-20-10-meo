@@ -25,7 +25,84 @@
 <section class="letter" id="letter" aria-hidden="true">
   <button class="close-letter" id="closeLetter">×</button>
 
-  <div class="letter-seal">💗</div>
+  <div class="digital-bouquet" aria-hidden="true">
+  <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="pinkPetal" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#ffd1e2"/>
+        <stop offset="50%" stop-color="#ff8fb8"/>
+        <stop offset="100%" stop-color="#c85b9b"/>
+      </linearGradient>
+
+      <linearGradient id="purplePetal" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#e1d5ff"/>
+        <stop offset="55%" stop-color="#aa8cff"/>
+        <stop offset="100%" stop-color="#7256c7"/>
+      </linearGradient>
+
+      <linearGradient id="stemColor" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#a5f5c4"/>
+        <stop offset="100%" stop-color="#329d83"/>
+      </linearGradient>
+
+      <filter id="flowerGlow">
+        <feGaussianBlur stdDeviation="2.5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <g class="bouquet-stems">
+      <path d="M160 178 C160 130 160 88 160 50"/>
+      <path d="M160 178 C143 132 112 100 84 75"/>
+      <path d="M160 178 C178 132 208 100 236 75"/>
+    </g>
+
+    <g class="bouquet-leaves">
+      <path d="M145 137 C120 116 104 119 96 134 C116 140 130 144 145 137Z"/>
+      <path d="M176 137 C200 116 216 119 224 134 C204 140 190 144 176 137Z"/>
+      <path d="M130 158 C110 145 96 149 91 160 C107 165 119 166 130 158Z"/>
+      <path d="M190 158 C210 145 224 149 229 160 C213 165 201 166 190 158Z"/>
+    </g>
+
+    <!-- Hoa giữa -->
+    <g transform="translate(160 48)">
+      <g class="flower-sway">
+        <ellipse class="pink-petal" cx="0" cy="-23" rx="16" ry="31"/>
+        <ellipse class="pink-petal" cx="23" cy="-8" rx="16" ry="31" transform="rotate(55 23 -8)"/>
+        <ellipse class="pink-petal" cx="23" cy="21" rx="16" ry="31" transform="rotate(115 23 21)"/>
+        <ellipse class="pink-petal" cx="0" cy="32" rx="16" ry="31" transform="rotate(180 0 32)"/>
+        <ellipse class="pink-petal" cx="-23" cy="21" rx="16" ry="31" transform="rotate(245 -23 21)"/>
+        <ellipse class="pink-petal" cx="-23" cy="-8" rx="16" ry="31" transform="rotate(305 -23 -8)"/>
+        <circle class="flower-core" cx="0" cy="5" r="13"/>
+      </g>
+    </g>
+
+    <!-- Hoa trái -->
+    <g transform="translate(84 75)">
+      <g class="flower-sway side-flower">
+        <ellipse class="purple-petal" cx="0" cy="-14" rx="12" ry="23"/>
+        <ellipse class="purple-petal" cx="17" cy="0" rx="12" ry="23" transform="rotate(70 17 0)"/>
+        <ellipse class="purple-petal" cx="0" cy="17" rx="12" ry="23" transform="rotate(180 0 17)"/>
+        <ellipse class="purple-petal" cx="-17" cy="0" rx="12" ry="23" transform="rotate(290 -17 0)"/>
+        <circle class="flower-core" cx="0" cy="2" r="9"/>
+      </g>
+    </g>
+
+    <!-- Hoa phải -->
+    <g transform="translate(236 75)">
+      <g class="flower-sway side-flower">
+        <ellipse class="purple-petal" cx="0" cy="-14" rx="12" ry="23"/>
+        <ellipse class="purple-petal" cx="17" cy="0" rx="12" ry="23" transform="rotate(70 17 0)"/>
+        <ellipse class="purple-petal" cx="0" cy="17" rx="12" ry="23" transform="rotate(180 0 17)"/>
+        <ellipse class="purple-petal" cx="-17" cy="0" rx="12" ry="23" transform="rotate(290 -17 0)"/>
+        <circle class="flower-core" cx="0" cy="2" r="9"/>
+      </g>
+    </g>
+  </svg>
+</div>
 
   <p class="letter-label">GỬI CÔ GÁI ĐÁNG YÊU NHẤT</p>
 
