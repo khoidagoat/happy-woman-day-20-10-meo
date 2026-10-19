@@ -129,3 +129,28 @@ function createPetal(index) {
     petal.remove();
   }, 10000);
 }
+let secretClicks = 0;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const secretBouquet = document.getElementById("secretBouquet");
+  const secretMessage = document.getElementById("secretMessage");
+  const secretSong = document.getElementById("secretSong");
+
+  if (!secretBouquet || !secretMessage) return;
+
+  secretBouquet.addEventListener("click", () => {
+    secretClicks++;
+
+    if (secretClicks === 3) {
+      secretMessage.classList.add("show-secret");
+
+      if (secretSong) {
+        secretSong.play().catch(() => {});
+      }
+
+      for (let i = 0; i < 18; i++) {
+        createHeart(i);
+      }
+    }
+  });
+});
