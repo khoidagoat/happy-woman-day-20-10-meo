@@ -1476,3 +1476,35 @@ body.revealed .letter {
   z-index: 1;
   pointer-events: none;
 }
+#secretBouquet {
+  cursor: pointer;
+}
+
+.secret-message {
+  margin-top: 18px;
+  color: #ffd1e2;
+  font: italic 1.05rem/1.7 Georgia, serif;
+  opacity: 0;
+  transform: translateY(12px) scale(.9);
+  transition: .5s ease;
+  pointer-events: none;
+}
+
+.secret-message.show-secret {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.secret-photo {
+  display: block;
+  width: min(100%, 260px);
+  margin: 12px auto 16px;
+  border-radius: 18px;
+  border: 2px solid rgba(255, 190, 220, .7);
+  box-shadow: 0 8px 25px rgba(255, 100, 180, .35);
+}
+
+.secret-message audio {
+  width: min(100%, 280px);
+}
