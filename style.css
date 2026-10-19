@@ -1372,3 +1372,29 @@ body.revealed .letter {
     scale(.8);
   }
 }
+#typewriter {
+  white-space: pre-line;
+  min-height: 60px;
+  line-height: 1.8;
+}
+
+#typewriter::after {
+  content: "|";
+  margin-left: 3px;
+  color: #ff79b0;
+  animation: blinkCursor 0.8s infinite;
+}
+
+#typewriter.typing-done::after {
+  opacity: 0;
+}
+
+@keyframes blinkCursor {
+  0%, 50% {
+    opacity: 1;
+  }
+
+  51%, 100% {
+    opacity: 0;
+  }
+}
