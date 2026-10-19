@@ -1,25 +1,27 @@
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.body.classList.remove("not-loaded");
   }, 1000);
-});
 
-const openGift = document.getElementById("openGift");
-const closeLetter = document.getElementById("closeLetter");
-const letter = document.getElementById("letter");
+  const openGift = document.getElementById("openGift");
+  const closeLetter = document.getElementById("closeLetter");
+  const letter = document.getElementById("letter");
 
-openGift.addEventListener("click", () => {
-  document.body.classList.add("revealed");
-  letter.setAttribute("aria-hidden", "false");
+  if (!openGift || !closeLetter || !letter) return;
 
-  for (let i = 0; i < 24; i++) {
-    createHeart(i);
-  }
-});
+  openGift.addEventListener("click", () => {
+    document.body.classList.add("revealed");
+    letter.setAttribute("aria-hidden", "false");
 
-closeLetter.addEventListener("click", () => {
-  document.body.classList.remove("revealed");
-  letter.setAttribute("aria-hidden", "true");
+    for (let i = 0; i < 24; i++) {
+      createHeart(i);
+    }
+  });
+
+  closeLetter.addEventListener("click", () => {
+    document.body.classList.remove("revealed");
+    letter.setAttribute("aria-hidden", "true");
+  });
 });
 
 function createHeart(index) {
