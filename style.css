@@ -1464,3 +1464,24 @@ body.revealed .letter {
   font-family: Georgia, "Times New Roman", serif !important;
   font-style: italic;
 }
+/* Đưa bó hoa ra dưới cạnh đáy của thiệp */
+.letter {
+  overflow: visible;
+}
+
+.digital-bouquet {
+  position: absolute;
+  left: 50%;
+  bottom: -105px;
+  width: min(100%, 320px);
+  height: 150px;
+  margin: 0;
+  transform: translateX(-50%);
+  z-index: 221;
+}
+
+.digital-bouquet svg {
+  width: 100%;
+  height: 150px;
+  overflow: visible;
+}
