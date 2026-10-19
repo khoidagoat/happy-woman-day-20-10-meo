@@ -1,4 +1,5 @@
 let petalInterval = null;
+
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.body.classList.remove("not-loaded");
@@ -8,15 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeLetter = document.getElementById("closeLetter");
   const letter = document.getElementById("letter");
   const message = document.getElementById("typewriter");
-let typingStarted = false;
-const message = document.getElementById("typewriter");
-let typingStarted = false;
+
+  let typingStarted = false;
+
   if (!openGift || !closeLetter || !letter) return;
 
-  openGift.addEventListener("click", () => { 
-    startTyping();
+  openGift.addEventListener("click", () => {
     document.body.classList.add("revealed");
     letter.setAttribute("aria-hidden", "false");
+
+    startTyping();
 
     for (let i = 0; i < 24; i++) {
       createHeart(i);
@@ -30,27 +32,29 @@ let typingStarted = false;
     letter.setAttribute("aria-hidden", "true");
     stopPetalLoop();
   });
+
+  function startTyping() {
+    if (!message || typingStarted) return;
+
+    typingStarted = true;
+
+    const text = message.textContent.trim();
+    message.textContent = "";
+
+    let index = 0;
+
+    const typingTimer = setInterval(() => {
+      message.textContent += text[index];
+      index++;
+
+      if (index >= text.length) {
+        clearInterval(typingTimer);
+        message.classList.add("typing-done");
+      }
+    }, 45);
+  }
 });
-function startTyping() {
-  if (!message || typingStarted) return;
 
-  typingStarted = true;
-
-  const text = message.textContent.trim();
-  message.textContent = "";
-
-  let index = 0;
-
-  const typingTimer = setInterval(() => {
-    message.textContent += text[index];
-    index++;
-
-    if (index >= text.length) {
-      clearInterval(typingTimer);
-      message.classList.add("typing-done");
-    }
-  }, 45);
-}
 function createHeart(index) {
   const heart = document.createElement("span");
 
@@ -69,6 +73,7 @@ function createHeart(index) {
     heart.remove();
   }, 4500);
 }
+
 function startPetalLoop() {
   if (petalInterval) return;
 
@@ -89,6 +94,7 @@ function stopPetalLoop() {
     .querySelectorAll(".falling-petal")
     .forEach((petal) => petal.remove());
 }
+
 function createPetal(index) {
   const petal = document.createElement("span");
 
